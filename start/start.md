@@ -42,6 +42,6 @@ _start
 If we can put our shellcode in and run it, we will have a shell.
 
 ###### Idea
-Send a string to modify return address from 0x804809d to 0x08048087 and the program will execute write function again. This time it will leak the stack address(esp) since the string after it is popped out. Then we got the second chance to enter input. This time, with knowing the stack address, we can input a longer string again to modify the return address and add our shellcode behind. ex: [aaa...] + [return address] + shellcode
+Send a string to modify return address from 0x804809d to 0x08048087 and the program will execute write function again. This time it will leak the stack address(esp) (write function will print it out) since the string after it is popped out. Then we got the second chance to enter input. This time, with knowing the stack address, we can input a longer string again to modify the return address and add our shellcode behind. ex: [aaa...] + [return address] + shellcode
 ###### The return address points to the shell code on the stack!
 
