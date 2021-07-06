@@ -1,8 +1,8 @@
 from pwn import *
 
-# server = remote('chall.pwnable.tw', 10000)
-context.terminal = ['tmux','splitw','-h']
-server = gdb.debug('./start')
+server = remote('chall.pwnable.tw', 10000)
+# context.terminal = ['tmux','splitw','-h']
+# server = gdb.debug('./start')
 
 print(server.read())
 
